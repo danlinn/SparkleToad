@@ -1,0 +1,88 @@
+{"botinfo":
+{
+	"auth":   "UWRaZGQvLYfxQgJFglkKbYxr",
+	"userid": "516ec9b6aaa5cd0421b74806",
+	"botname":"toadbot",
+	"laptop": "mac"
+},
+	"roomid":     "4e04b6a814169c0aaa0096cc",
+	"admin":      "",
+	"database":   {
+		"usedb":     true,
+		"dbname":    "tt",
+		"logchat":   false,
+		"tablenames":{
+			"song":   "SONGLIST",
+			"chat":   "CHATLOG",
+			"user":   "USERS",
+			"banned": "BANNEDUSERS",
+			"holiday":"HOLIDAY_GREETINGS"
+		},
+		"login":     {
+			"user":    "tt",
+			"password":"tt",
+			"host":    "localhost"
+		}
+	},
+	"lastfm":     {
+		"useapi":   true,
+		"lastfmkey":"728b38af8a4b336107dee4db3af64506"
+	},
+	"http":       {
+		"usehttp":true,
+		"port":   8181,
+		"host":   "localhost"
+	},
+	"responses":  {
+		"respond":        true,
+		"announcebonus":  true,
+		"reportsongstats":true,
+		"welcomeusers":   true,
+		"welcomepm":      true,
+		"alwayspm":       false,
+		"pmgreet":        "Welcome to Hot Frogs! Type 'commands' to see a list of commands I can respond to.",
+		"greeting":       "Welcome, ",
+		"suffix":       	"The current theme is ______",
+		"ownerresponse":  "Dan Linn made me!",
+		"sing":           true,
+		"rules":          {
+			"description":"No queue, no butt rock (metal and punk ok), no country (bluegrass and honkytonk ok), and no teenpop",
+			"link":       "http://tinyurl.com/63hr2jl"
+		}
+	},
+	"consolelog": true,
+	"bonusvote":  "AUTO",
+	"djing":      {
+		"botdj": true,
+		"minDjs":0,
+		"maxDjs":4
+	},
+	"enforcement":{
+		"enforceroom":true,
+		"waitlist":   false,
+		"songslimit": {
+			"limitsongs":false,
+			"maxsongs":  2,
+			"minDjs":    5
+		},
+		"stepuprules":{
+			"waittostepup":false,
+			"waittype":    "SONGS",
+			"length":      4
+		},
+		"ffarules":   {
+			"multiplespotffa":false,
+			"timerffa":       true,
+			"timeout":        10
+		},
+		"idle":       {
+			"idlerules":      false,
+			"idlewarntime":   10,
+			"idleremovaltime":12,
+			"minDjs":         5
+		}
+	},
+	"maintenance":{
+		"autorejoin":true
+	}
+}
