@@ -42,7 +42,7 @@
 		"alwayspm":       false,
 		"pmgreet":        "Welcome to Hot Frogs! Type 'commands' to see a list of commands I can respond to.",
 		"greeting":       "Welcome, ",
-		"suffix":       	"The current theme is ______",
+		"suffix":       	"The current theme is Indie. Like, Duh.",
 		"ownerresponse":  "Dan Linn made me!",
 		"sing":           true,
 		"rules":          {

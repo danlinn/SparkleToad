@@ -238,6 +238,41 @@ exports.speakEventHandler = function (data) {
             [data.userid, inputtext]);
     }
 
+    var text = data.text.toLowerCase();
+      // Respond to "/hello" command
+      if (text.match(/^hello/) || text.match(/^hi/) || text.match(/^yo/) || text.match(/^howdy/)) {
+        bot.speak('What up @'+data.name+'?');
+      } else if (text.match(/bop/)) {
+        bot.vote('up');
+      } else if(text.match(/^dj$/)) {
+        bot.addDj();
+      } else if(text.match(/dive/)) {
+        bot.remDj();
+      } else if(text.match(/ron\?/)) {
+        bot.speak('MMM... That\'s baby makin\' music right there.');
+      } else if(text.match(/veronica\?/)) {
+        bot.speak('Jazz flute is for little fairy boys');
+      }else if(text.match(/zohan/)) {
+        bot.speak('Disco! Disco! Good! Good!');
+      }else if(text.match(/meaning\sof\slife/)) {
+        bot.speak('42 Obviously');
+      }
+
+    //Big Pimpin
+    console.log(data.name);
+    console.log(config.botinfo.botname);
+    if ( (text.match(/what up/) || text.match(/pimp/) ) && (data.name.toLowerCase() != config.botinfo.botname)) {
+        bot.speak('You know how we do it...');
+        setTimeout(function(){
+            bot.speak('Big pimpin\'...');
+        }, 1500);
+        setTimeout(function(){
+            bot.speak('Easy livin\'...');
+        }, 3500);
+        setTimeout(function(){
+            bot.speak('Bling blingin\' and shit.');
+        }, 5700);
+    }
     //If it's a supported command, handle it
 
     if (config.responses.respond) {
