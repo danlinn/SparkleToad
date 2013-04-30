@@ -532,6 +532,11 @@ exports.snagEventHandler = function(data) {
 
         }
     }
+    if (data.userid!=config.botinfo.userid) {
+        bot.snag();
+        bot.speak('I\'m snagging this too. THIS SONG IS MY NEW JAM');
+        bot.vote('up');
+    }
 
     //Increase song snag count
     currentsong.snags++;
