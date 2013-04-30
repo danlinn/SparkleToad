@@ -520,6 +520,7 @@ exports.snagEventHandler = function(data) {
     if (config.consolelog) {
         try{
             console.log('[ Snag ] ' + usersList[data.userid].name);
+            console.log(currentsong);
         } catch(e) {
 
         }
