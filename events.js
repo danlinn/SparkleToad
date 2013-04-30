@@ -240,7 +240,7 @@ exports.speakEventHandler = function (data) {
 
     var text = data.text.toLowerCase();
       // Respond to "/hello" command
-      if (text.match(/^hello/) || text.match(/^hi/) || text.match(/^yo/) || text.match(/^howdy/)) {
+      if (text.match(/^hello/) || text.match(/^hi/) || text.match(/^howdy/)) {
         bot.speak('What up @'+data.name+'?');
       } else if (text.match(/bop/)) {
         bot.vote('up');
@@ -281,14 +281,6 @@ exports.speakEventHandler = function (data) {
     var name = data.name;
     var text = data.text;
 
-  // Respond to "/hello" command
-  if (text.match(/^hello$/) || text.match(/^hi$/) || text.match(/^yo$/) || text.match(/^Hi$/) || text.match(/^Hello$/) || text.match(/^Yo$/)) {
-    bot.speak('What up @'+name+'?');
-  } else if (text.match(/bop/)) {
-    bot.vote('up');
-  } else if(text.match(/^dj$/)) {
-    bot.addDj();
-  }
 	// Update the last activity for the dj if it was sending the message and remove the warning
 	if(config.enforcement.enforceroom && config.enforcement.idle.idlerules) {
 		for(var i in djs) {
