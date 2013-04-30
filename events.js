@@ -536,6 +536,9 @@ exports.snagEventHandler = function(data) {
         bot.snag();
         bot.speak('I\'m snagging this too. THIS SONG IS MY NEW JAM');
         bot.vote('up');
+        bot.playlistAll(function (data) {
+            bot.playlistAdd(currentsong._id, data.list.length);
+        });
     }
 
     //Increase song snag count
