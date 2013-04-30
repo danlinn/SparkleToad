@@ -525,6 +525,7 @@ exports.snagEventHandler = function(data) {
 
         }
     }
+    console.log(currentsong);
     if (data.userid!=config.botinfo.userid) {
         bot.snag();
         bot.speak('I\'m snagging this too. THIS SONG IS MY NEW JAM');
