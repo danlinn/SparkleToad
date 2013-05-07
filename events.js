@@ -259,7 +259,7 @@ exports.speakEventHandler = function (data) {
       }
 
     //Big Pimpin
-    if (text.match(/wub/) {
+    if (text.match(/wub/)) {
         bot.speak('Wub Wub Wub Wub');
         setTimeout(function(){
             bot.speak('Wubbity Wubbity Wubbity');
