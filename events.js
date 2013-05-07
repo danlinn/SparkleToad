@@ -259,8 +259,15 @@ exports.speakEventHandler = function (data) {
       }
 
     //Big Pimpin
-    console.log(data.name);
-    console.log(config.botinfo.botname);
+    if (text.match(/wub/) {
+        bot.speak('Wub Wub Wub Wub');
+        setTimeout(function(){
+            bot.speak('Wubbity Wubbity Wubbity');
+        }, 3500);
+        setTimeout(function(){
+            bot.speak('WUUUUUUUB');
+        }, 7700);
+    }
     if ( (text.match(/what up/) || text.match(/pimp/) ) && (data.name.toLowerCase() != config.botinfo.botname)) {
         bot.speak('You know how we do it...');
         setTimeout(function(){

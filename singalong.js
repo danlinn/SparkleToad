@@ -43,6 +43,7 @@ var songlist = [
     ['Reptar', 'Blastoff', blastoff],
     ['Reptar', 'Houseboat Babies', houseboatbabies],
     ['The Beastie Boys', 'Girls', girls],
+    ['Beastie Boys', 'Girls', girls],
     ['Johnny Cash', 'Ring of Fire', rof]
 ];
 
