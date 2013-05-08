@@ -174,7 +174,7 @@ function initializeModules() {
 				dbhost = config.database.login.host;
 			}
 			client =
-				mysql.createConnection({user:config.database.login.user, password:config.database.login.password, database:config.database.dbname, host:dbhost});
+				mysql.createConnection({user:config.database.login.user, password:config.database.login.password, database:config.database.dbname, host:dbhost, insecureAuth: true});
 
 
 		} catch(e) {
