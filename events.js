@@ -280,6 +280,19 @@ exports.speakEventHandler = function (data) {
             bot.speak('Bling blingin\' and shit.');
         }, 5700);
     }
+
+    if ((text.match(/^set\stheme/)) {
+        newtheme = text.replace(/^set\stheme\s/,'');
+        console.log(newtheme);
+        // var fs = require('fs');
+        // fs.writeFile("theme.js", "Hey there!", function(err) {
+        //     if(err) {
+        //         console.log(err);
+        //     } else {
+        //         console.log("The file was saved!");
+        //     }
+        // });
+    }
     //If it's a supported command, handle it
 
     if (config.responses.respond) {
