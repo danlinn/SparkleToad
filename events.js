@@ -287,6 +287,7 @@ exports.speakEventHandler = function (data) {
     if (text.match(/^set\stheme/)) {
         newtheme = text.replace(/^set\stheme\s/,'');
         var fs = require('fs');
+        global.theme.theme = newtheme;
         fs.writeFile("theme.json", "{\"theme\" : \"" + newtheme + "\"}", function(err) {
             if(err) {
                 console.log(err);
