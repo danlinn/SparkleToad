@@ -30,7 +30,8 @@ global.singalong;
 global.uptime = new Date();
 global.commands = new Array();              //Array of command handlers
 global.httpcommands = new Array();          //Array of HTTP handlers
-global.events = require('/usr/local/bin/node_modules/sparklebot/events.js');     //Event handlers
+global.events = require('/usr/local/bin/node_modules/SparkleToad/events.js');     //Event handlers
+global.theme = require('/usr/local/bin/node_modules/SparkleToad/theme.json');     //Theme
 
 initializeModules();
 
@@ -130,7 +131,7 @@ function initializeModules() {
 		if(args[2] == '-c' && args[3] != null) {
 			config = JSON.parse(fs.readFileSync(args[3], 'ascii'));
 		} else {
-			config = JSON.parse(fs.readFileSync('/usr/local/bin/node_modules/sparklebot/conf.json', 'ascii'));
+			config = JSON.parse(fs.readFileSync('/usr/local/bin/node_modules/SparkleToad/conf.json', 'ascii'));
 		}
 	} catch(e) {
 		//todo: update error handling
@@ -144,7 +145,7 @@ function initializeModules() {
 	//Loads bot singalongs
 	if(config.responses.sing) {
 		try {
-			singalong = require('/usr/local/bin/node_modules/sparklebot/singalong.js');
+			singalong = require('/usr/local/bin/node_modules/SparkleToad/singalong.js');
 		} catch(e) {
 			console.log(e);
 			console.log('Ensure that singalong.js is present in this directory,'
@@ -233,9 +234,9 @@ function initializeModules() {
 
 	//Load commands
 	try {
-		var filenames = fs.readdirSync('/usr/local/bin/node_modules/sparklebot/commands');
+		var filenames = fs.readdirSync('/usr/local/bin/node_modules/SparkleToad/commands');
 		for(i in filenames) {
-			var command = require('/usr/local/bin/node_modules/sparklebot/commands/' + filenames[i]);
+			var command = require('/usr/local/bin/node_modules/SparkleToad/commands/' + filenames[i]);
 			commands.push({name:command.name, handler:command.handler, hidden:command.hidden,
 				enabled:        command.enabled, matchStart:command.matchStart});
 		}
@@ -245,9 +246,9 @@ function initializeModules() {
 
 	//Load http commands
 	try {
-		var filenames = fs.readdirSync('/usr/local/bin/node_modules/sparklebot/api');
+		var filenames = fs.readdirSync('/usr/local/bin/node_modules/SparkleToad/api');
 		for(i in filenames) {
-			var command = require('/usr/local/bin/node_modules/sparklebot/api/' + filenames[i]);
+			var command = require('/usr/local/bin/node_modules/SparkleToad/api/' + filenames[i]);
 			httpcommands.push({name:command.name, handler:command.handler, hidden:command.hidden,
 				enabled:            command.enabled});
 		}
@@ -478,9 +479,10 @@ global.welcomeUser = function(name, id) {
 				+ config.database.tablenames.holiday + ' WHERE date LIKE CURDATE()',
 				function cbfunc(error, results, fields) {
 					if(results != null && results[0] != null) {
-						bot.speak(results[0]['greeting'] + ', ' + name + '! ' + config.responses.suffix);
+						console.log("Theme is " + global.theme.theme);
+						bot.speak(results[0]['greeting'] + ', ' + name + '! ' + config.responses.suffix + global.theme.theme);
 					} else {
-						bot.speak(config.responses.greeting + name + '! ' + config.responses.suffix);
+						bot.speak(config.responses.greeting + name + '! ' + config.responses.suffix + global.theme.theme);
 					}
 				});
 		} else {
