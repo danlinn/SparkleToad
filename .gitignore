@@ -10,5 +10,6 @@ lib-cov
 pids
 logs
 results
-
+conf.json
+theme.json
 npm-debug.log
