@@ -281,7 +281,7 @@ exports.speakEventHandler = function (data) {
         }, 5700);
     }
 
-    if ((text.match(/^set\stheme/)) {
+    if (text.match(/^set\stheme/)) {
         newtheme = text.replace(/^set\stheme\s/,'');
         console.log(newtheme);
         // var fs = require('fs');
