@@ -268,7 +268,7 @@ exports.speakEventHandler = function (data) {
             bot.speak('WUUUUUUUB');
         }, 7700);
     }
-    if (text.match(/theme?/)) {
+    if (text.match(/theme\?/)) {
         bot.speak('The current theme is ' + global.theme.theme);
     }
     if ( (text.match(/what up/) || text.match(/pimp/) ) && (data.name.toLowerCase() != config.botinfo.botname)) {
